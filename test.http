@@ -1,0 +1,44 @@
+POST http://localhost:8080/api/expenses
+Content-Type: application/json
+
+{
+  "title": "Groceries",
+  "amount": 1500,
+  "category": "Food",
+  "date": "2026-02-19"
+}
+###
+POST http://localhost:8080/api/expenses
+Content-Type: application/json
+
+{
+  "amount": -100,
+  "category": "",
+  "date": null
+}
+
+###
+
+GET http://localhost:8080/api/expenses
+
+###
+GET http://localhost:8080/api/expenses/monthly-total?year=2026&month=2
+
+###
+GET http://localhost:8080/api/expenses/date-range-total?start=2026-02-01&end=2026-02-28
+
+###
+GET http://localhost:8080/api/expenses?page=0&size=3
+
+###
+PUT http://localhost:8080/api/expenses/1
+Content-Type: application/json
+
+{
+  "amount": 2000,
+  "category": "Shopping",
+  "date": "2026-02-20"
+}
+
+###
+DELETE http://localhost:8080/api/expenses/1
